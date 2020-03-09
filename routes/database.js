@@ -5,10 +5,11 @@ const users = require('./json/users.json');
 
 const pool = new Pool({
   users: 'labber',
-  password: '123', 
+  password: '123',
   host: 'localhost',
   database: 'midterm'
 });
+
 pool.connect();
 const getUserWithEmail = function(email) {
     const queryString = `
@@ -16,7 +17,7 @@ const getUserWithEmail = function(email) {
     WHERE email = $1;
     `;
     const queryParams = [email];
-  
+
     return pool.query(queryString, queryParams)
       .then(res => {
         // user not found
@@ -25,5 +26,6 @@ const getUserWithEmail = function(email) {
       })
       .catch(err => console.error('\nerror fetching user:\n', err));
   }
+
+
   exports.getUserWithEmail = getUserWithEmail;
-  
