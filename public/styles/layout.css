@@ -1,0 +1,141 @@
+body {
+  font-family: 'Reenie Beanie', cursive;
+}
+
+.logo {
+  position: fixed;
+  top: 0px;
+  height: 120px;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  font-family: 'Reenie Beanie', cursive;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  background: #0e0e0e;
+  background: linear-gradient(90deg, rgba(14, 14, 14, 0.676908) 0%, #090b0b 0%, #050c0d 46%, #00090b 68%);
+}
+
+.img {
+  background-image: url("https://i1.wp.com/sendtask.io/wp-content/uploads/2017/03/to-do.png?resize=1024%2C424&ssl=1");
+  display: flex;
+  height: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 120px;
+}
+
+.login:hover {
+  transform: scale(1.2);
+  background-color: black;
+  opacity: 10px;
+}
+
+.login {
+  border: whitesmoke;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 30px;
+  overflow: hidden;
+  transition: all 2s;
+  margin: auto;
+}
+
+.text {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+img {
+  height: 250px;
+  width: 400px;
+  padding: 20px;
+  display: inline-flexbox;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+.navbar {
+  font-family: 'Reenie Beanie', cursive;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  color: white;
+}
+
+body {
+  background-color: black !important;
+}
+
+.card {
+  margin-bottom: 10;
+  color: black;
+  box-sizing: content-box;
+}
+
+.card-header {
+  color: black;
+  justify-content: space-between;
+}
+
+.add-item {
+  margin-top: 20px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.input-group {
+  height: 60px;
+}
+
+.read-list {
+  margin: 100px auto;
+  padding-bottom: 100px;
+  border-bottom: 30px #545149 solid;
+  width: 100%;
+  word-break: break-word;
+  text-align: center;
+  font-family: fantasy;
+}
+
+.watch-list {
+  margin: 100px auto;
+  padding-bottom: 20px;
+  border-bottom: 4px #545149 solid;
+  width: 97%;
+  word-break: break-word;
+  text-align: center;
+  font-family: fantasy;
+}
+
+.buy-list {
+  margin: 100px auto;
+  padding-bottom: 20px;
+  border-bottom: 4px #545149 solid;
+  width: 97%;
+  word-break: break-word;
+  text-align: center;
+  font-family: fantasy;
+}
+
+.eat-list {
+  margin: 100px auto;
+  padding-bottom: 20px;
+  border-bottom: 4px #545149 solid;
+  width: 97%;
+  word-break: break-word;
+  text-align: center;
+  font-family: fantasy;
+}
+
+.add-btn {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
