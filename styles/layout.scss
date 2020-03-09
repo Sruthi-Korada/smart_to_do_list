@@ -53,12 +53,12 @@ margin: auto;
   font-family:  'Reenie Beanie', cursive;
 }
 .mdimg {
-  height: 250px;
-  width: 400px;
-  padding: 20px;
-  display: inline-flexbox;
+  height: 200px;
+  width: 300px;
+  // padding: 20px;
+  display: inline-table;
   justify-content: space-between;
-  margin-left: 50px;
+  
 }
 
 .navbar {
