@@ -17,5 +17,6 @@ CREATE TABLE categories (
 CREATE TABLE to_do_lists (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  input TEXT NOT NULL,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );

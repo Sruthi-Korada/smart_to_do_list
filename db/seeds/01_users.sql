@@ -10,7 +10,7 @@ VALUES (1, 'to read'),
 (3, 'to buy'),
 (4, 'to eat');
 
-INSERT INTO to_do_lists (id,user_id,category_id)
-VALUES (1,1,3),
-      (2,2,1),
-      (3,2,4);
+INSERT INTO to_do_lists (id,user_id,input,category_id)
+VALUES (1,1,'frozen',2),
+      (2,2,'apple',3),
+      (3,2,'cactusclub',4);
