@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-
+const cookieSession = require("cookie-session");
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -52,7 +52,12 @@ app.get("/", (req, res) => {
 app.get ("/user", (reg, res) => {
  res.render("user")
 });
-
+  app.post("/", (reg,res) => {
+    res.render("user")
+  })
+  app.get("/logout", (req,res) => {
+    res.render("index")
+  })
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
