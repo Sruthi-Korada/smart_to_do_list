@@ -1,0 +1,112 @@
+.body {
+  background-color: #eeeeee;
+}
+
+.body .md-form {
+  padding-bottom: 20px;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-container #my-lists {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px auto;
+  width: 100%;
+  height: 100%;
+}
+
+.task-container #my-lists article {
+  width: 22%;
+  box-shadow: 5px 10px 5px #888888;
+  height: 500px;
+  position: relative;
+  border-radius: 12px;
+}
+
+.task-container #my-lists article header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Baloo Tamma', cursive;
+  font-size: 1.2rem;
+  background-color: #7e7d7d;
+  color: #c3c3c3;
+}
+
+.task-container #my-lists article header div {
+  display: flex;
+  padding: 0 5px;
+}
+
+.task-container #my-lists article div {
+  margin: 15px 0 9px 0;
+}
+
+.task-container #my-lists article .list-group {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+  overflow: auto;
+  position: absolute;
+  height: calc(100% - 52px);
+  width: 100%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.task-container #my-lists article .list-group .list-group-item {
+  background-color: #d8d8d8;
+  text-align: center;
+  border: none;
+}
+
+.task-container #my-lists article .list-group .list-group-item .fa-times {
+  position: absolute;
+  right: 10px;
+  visibility: hidden;
+  color: darkgray;
+  padding-top: 5px;
+}
+
+.task-container #my-lists article .list-group .list-group-item:hover {
+  background-color: #f6e5bc;
+}
+
+.task-container #my-lists article .list-group .list-group-item:hover .fa-times {
+  visibility: visible;
+}
+
+.task-container #my-lists #movies {
+  order: 1;
+  background-color: #d4d4d4d5;
+}
+
+.task-container #my-lists #books {
+  background-color: #d4d4d4d5;
+  order: 2;
+}
+
+.task-container #my-lists #restaurants {
+  background-color: #d4d4d4d5;
+  order: 3;
+}
+
+.task-container #my-lists #products {
+  background-color: #d4d4d4d5;
+  order: 4;
+}
+
+.color {
+  color: black;
+  font-size: xx-large;
+  
+}

@@ -1,0 +1,103 @@
+.body {
+    background-color: #eeeeee;
+  
+    .md-form {
+      padding-bottom: 20px;
+    }
+  }
+  
+  .task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  
+    #my-lists {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 50px auto;
+      width: 100%;
+      height: 100%;
+  
+      article {
+        width: 22%;
+        box-shadow: 5px 10px 5px #888888;
+        height: 500px;
+        position: relative;
+        border-radius: 12px;
+  
+        header {
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          font-family: 'Baloo Tamma', cursive;
+          font-size: 1.2rem;
+          background-color: #7e7d7d;
+          color:#c3c3c3;
+  
+  
+          div {
+            display: flex;
+            padding: 0 5px;
+          }
+        }
+  
+        div {
+          margin: 15px 0 9px 0;
+        }
+  
+        .list-group {
+          font-family: 'Roboto', sans-serif;
+          font-size: 1rem;
+          overflow-wrap: break-word;
+          overflow: auto;
+          position: absolute;
+          height: calc(100% - 52px);
+          width: 100%;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+  
+          .list-group-item {
+            background-color: #d8d8d8;
+            text-align: center;
+            border: none;
+  
+            .fa-times {
+              position:absolute;
+              right: 10px;
+              visibility:hidden;
+              color:darkgray;
+              padding-top: 5px;
+            }
+          }
+          .list-group-item:hover {
+            background-color:#f6e5bc;
+            .fa-times {
+              visibility: visible;
+            }
+          }
+        }
+  
+      }
+      #movies {
+        order: 1;
+        background-color: #d4d4d4d5;
+      }
+      #books {
+        background-color: #d4d4d4d5;
+        order: 2;
+      }
+      #restaurants {
+        background-color: #d4d4d4d5;
+        order: 3;
+      }
+      #products {
+        background-color: #d4d4d4d5;
+        order: 4;
+      }
+    }
+  }

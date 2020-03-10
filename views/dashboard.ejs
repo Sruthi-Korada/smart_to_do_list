@@ -3,33 +3,42 @@
 
 <head>
   <title>to do list</title>
+  <meta charset="UTF-8">
 
-  <!-- required for bootstrap responsive view -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
+  <!--Css style-->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/task.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/task2.css" type="text/css" />
+  <!-- Bootstrap drag and drop -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/gh/RubaXa/Sortable/Sortable.min.js"></script>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!--Font Families-->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Pacifico|Reenie+Beanie|Sacramento&display=swap"
     rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
 
 </head>
 <header>
@@ -51,53 +60,52 @@
   <!-- if user is logged in -->
   <!-- add item input -->
 
-  <div class="container add-item">
-    <div class="row">
-      <div class="col-11">
-        <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
-      </div>
-      <div class="col-1">
-        <button id="itemSubmit" class=" add-btn">Add</button>
-      </div>
+  <div class='task-form'>
+    <form id='submit-form'>
+      <input type='text' name='task' class = "col-11" placeholder='add task' id="addTask">
+      <button class='add-task'>add</button>
+    </form>
+  </div>
+ 
+  <!-- main container with categories and lists -->
+  <div class="task-container">
+    <div id='my-lists'>
+      <article id="movies" data-category_id="1">
+        <header>
+          <div><i class="fas fa-video"></i></div>
+          <div class="color">Movies</div>
+        </header>
+        <ul class="list-group" id="demo1" data-category_id="1">
+        </ul>
+      </article>
+      <article id="books" data-category_id="2">
+        <header>
+          <div><i class="fas fa-book-open"></i></div>
+          <div class="color">Books</div>
+        </header>
+        <ul class="list-group" id="demo2" data-category_id="2">
+        </ul>
+
+      </article>
+      <article id="restaurants" data-category_id="3">
+        <header>
+          <div><i class="fas fa-utensils"></i></div>
+          <div class="color">Restaurants</div>
+        </header>
+        <ul class="list-group" id="demo3" data-category_id="3">
+        </ul>
+      </article>
+      <article id="products" data-category_id="4">
+        <header>
+          <div><i class="fas fa-shopping-cart"></i></div>
+          <div class="color">Products</div>
+        </header>
+        <ul class="list-group" id="demo4" data-category_id="4">
+        </ul>
+      </article>
     </div>
   </div>
-  <!-- main container with categories and lists -->
-  <div class="container">
-    <div class="card-deck categories">
-      <!-- to read list column -->
-      <div class="card read-list">
-        <h5 class="card-header" id="read-header"><img src="img/book.png" alt="" width="30" height="30" /> To Read</h5>
-        <div class="card-block" id="read-block">
-          <ul class="list-group list-group-flush" id="read-items">
-          </ul>
-        </div>
-      </div>
-      <!-- to watch list column -->
-      <div class="card watch-list">
 
-        <h5 class="card-header" id="watch-header"><img src="img/tv.png" alt="" width="30" height="30" /> To Watch</h5>
-        <div class="card-block" id="watch-block">
-          <ul class="list-group list-group-flush" id="watch-items">
-          </ul>
-        </div>
-      </div>
-      <!-- to buy list column -->
-      <div class="card buy-list">
-        <h5 class="card-header" id="buy-header"><img src="img/buy.png" alt="" width="30" height="30" /> To Buy</h5>
-        <div class="card-block" id="buy-block">
-          <ul class="list-group list-group-flush" id="buy-items">
-          </ul>
-        </div>
-      </div>
-      <!-- to eat list column -->
-      <div class="card eat-list">
-        <h5 class="card-header" id="eat-header"><img src="img/eat.png" alt="" width="30" height="30" /> To Eat</h5>
-        <div class="card-block" id="eat-block">
-          <ul class="list-group list-group-flush" id="eat-items">
-          </ul>
-        </div>
-      </div>
-    </div>
 </body>
 
 </html>
