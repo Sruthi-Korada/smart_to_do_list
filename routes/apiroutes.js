@@ -1,10 +1,11 @@
 const { addTask, getTaskById } = require('./database');
 const express = require('express');
-const router  = express.Router();
+// const router  = express.Router();
 
 const SerpWow = require('google-search-results-serpwow');
 // create the serpwow object
 let serpwow = new SerpWow('680DE5388756457FAED398B25A3A9593');
+
 
 /**
  * 1 - Pre-defined tags with the keywords used to categorize the task

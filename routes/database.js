@@ -1,7 +1,4 @@
 const { Pool } = require('pg');
-const categories = require('./json/categories.json');
-const users = require('./json/users.json');
-
 
 const pool = new Pool({
   users: 'labber',
