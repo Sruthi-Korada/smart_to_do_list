@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { getTaskById, getUserById } = require('/database');
-const { categorizeTask } = require('../routes/apiroutes');
+const {
+  getTaskById,
+  getUserById
+} = require('/database');
+const {
+  categorizeTask
+} = require('../routes/apiroutes');
 
 module.exports = () => {
   // load tasks page
@@ -14,7 +19,7 @@ module.exports = () => {
       user: user,
       task: task
     }
-    res.render('../views/user', templateVars);
+    res.render('../views/dashboard', templateVars);
   })
 
   router.post('/', async (req, res) => {

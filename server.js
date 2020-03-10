@@ -44,12 +44,17 @@ app.use(cookieSession({
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+//const taskRoutes = require('./routes/task');
+//const updateProfile = require('./routes/update_profile');
 
 console.log
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+//app.use('/task', taskRoutes());
+//app.use('/logout', logoutRoutes());
+//app.use('/update_profile', updateProfile(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -57,9 +62,20 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+
+  // VRIFY IF USER IS LOGGED OR NOT BY CHECKING THE SESSION VARIABLES
+  //IF NOT LOGGED REDIRECT TO -> /api/users/login
+  // IF LOGGED REDIRECT TO TASK  -> api//
+
+  res.redirect("/api/users/login");
 });
 
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+app.get("/logout", (req, res) => {
+  res.render("/index");
+})
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

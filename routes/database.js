@@ -28,14 +28,6 @@ const getUserWithEmail = async function (email) {
   } catch (err) {
     console.error('query error', err.stack);
   }
-  // return pool.query(queryString, queryParams)
-  //   .then(res => {
-  //     // user not found
-  //     console.log("user: " + res.rows[0])
-  //     if (!res.rows[0]) return null;
-  //     return res.rows[0];
-  //   })
-  //   .catch(err => console.error('\nerror fetching user:\n', err));
 }
 module.exports.getUserWithEmail = getUserWithEmail;
 

@@ -33,7 +33,6 @@ module.exports = (db) => {
           });
       });
   });
-  console.log("test");
   router.get("/user", (req, res) => {
     res.render("user")
   });
@@ -67,8 +66,50 @@ module.exports = (db) => {
     res.redirect('/api/users');
   });
 
-  router.get("/logout", (req, res) => {
-    res.render("index")
+  router.get("/login", (req, res) => {
+    //clear session variables
+    res.render("../views/index");
+  });
+
+  // logging in
+  router.post('/login', async (req, res) => {
+    // query the database for the email input by user
+    getUserWithEmail(req.body.email)
+      .then(user => {
+        if (!user) {
+          res.json({
+            error: 'User does not exist'
+          });
+
+        } else {
+          // check password
+          if (!bcrypt.compareSync(req.body.password, user.password)) {
+            res.json({
+              error: 'Password does not match'
+            });
+
+          } else {
+            req.session = {
+              user_id: user.id
+            };
+            res.render('../views/dashboard');
+
+          }
+        }
+      })
+      .catch(err => {
+        console.error('login error', err);
+      });
+
+  });
+
+  // LOGOUT//
+  router.post('/logout', (req, res) => {
+    // clear session cookie
+    req.session = null;
+    // redirect to homepage/login
+    res.redirect('/index');
+
   });
 
   return router;
