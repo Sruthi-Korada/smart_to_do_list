@@ -1,9 +1,12 @@
 const {
   Pool
 } = require('pg');
+
 const {
   Pool
 } = require('pg');
+//const categories = require('./json/categories.json');
+//const users = require('./json/users.json');
 //const categories = require('./json/categories.json');
 //const users = require('./json/users.json');
 
@@ -43,6 +46,16 @@ try {
 } catch (err) {
   console.error('query error', err.stack);
 }
+
+
+try {
+  const res = await pool.query(queryString, queryParams);
+  return res.rows[0] || null;
+
+} catch (err) {
+  console.error('query error', err.stack);
+}
+
 
 module.exports.getUserWithEmail = getUserWithEmail;
 

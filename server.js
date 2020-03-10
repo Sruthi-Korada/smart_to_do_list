@@ -63,7 +63,9 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
 
+
   res.render("index");
+
 
   // VRIFY IF USER IS LOGGED OR NOT BY CHECKING THE SESSION VARIABLES
   //IF NOT LOGGED REDIRECT TO -> /api/users/login
