@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Pacifico|Reenie+Beanie|Sacramento&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  </head>
-  <body style="background-color: black;">
-    <nav class="logo">
-     <h1> ~~~ to do list ~~~ </h1>
-    </nav>
-    <header class="img">
-     <div class ="login">
-       <form action = "/user" method="GET">
-         <div>
-            <input type="text" name= "email" placeholder="Enter Username" required>
-            <input type="text" name= "email" placeholder="password" required>
-         </div> <br>
-         <div>
-            <button class="btn btn-dark" type="submit">login</button>
-         </div>
-       </form>
-     </div>
-    </header>
-    <section>
-      <h1 class="text">We do this for you!!!</h1>
-      
-      
-      <img src ="https://www.post-it.com/wps/wcm/connect/4480a32e-8a32-410b-afd7-4165feb313cc/1/rG-57-Columns-1.jpg?MOD=AJPERES" class="mdimg">
-      <img src = "https://www.post-it.com/wps/wcm/connect/a7e98cc2-1b7f-44c1-8983-efd0a6d756b0/1/rG-57-Columns-3.jpg?MOD=AJPERES" class="mdimg">
-      <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7cyk7AFgmw1mGRt61F60LyDMem2tXATD3xrwqKy1K_SQlGzEh" class="mdimg">
-    
-    </section>
-  </body>
+
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Pacifico|Reenie+Beanie|Sacramento&display=swap"
+    rel="stylesheet">
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body style="background-color: black;">
+  <nav class="logo">
+    <h1> ~~~ to do list ~~~ </h1>
+  </nav>
+  <header class="img">
+    <div class="login">
+      <form action="/api/users/login" method="POST">
+        <div>
+          <input type="text" name="email" placeholder="Enter Username" required>
+          <input type="password" name="password" placeholder="password" required>
+        </div> <br>
+        <div>
+          <button class="btn btn-dark" type="submit">login</button>
+        </div>
+      </form>
+    </div>
+  </header>
+  <section>
+    <h1 class="text">We do this for you!!!</h1>
+
+
+    <img
+      src="https://www.post-it.com/wps/wcm/connect/4480a32e-8a32-410b-afd7-4165feb313cc/1/rG-57-Columns-1.jpg?MOD=AJPERES"
+      class="mdimg">
+    <img
+      src="https://www.post-it.com/wps/wcm/connect/a7e98cc2-1b7f-44c1-8983-efd0a6d756b0/1/rG-57-Columns-3.jpg?MOD=AJPERES"
+      class="mdimg">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7cyk7AFgmw1mGRt61F60LyDMem2tXATD3xrwqKy1K_SQlGzEh"
+      class="mdimg">
+
+  </section>
+</body>
+
 </html>
