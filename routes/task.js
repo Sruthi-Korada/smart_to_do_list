@@ -34,9 +34,7 @@ module.exports = (db) => {
       task: req.body.item,
       user_id: req.session.user_id
     }
-    console.log(input);
     // categorize new task
-    console.log(req.body);
     const newTask = await categorizeTask(input);
     res.json(newTask);
 

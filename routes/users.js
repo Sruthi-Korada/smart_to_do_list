@@ -100,7 +100,7 @@ module.exports = (db) => {
             req.session = {
               user_id: user.id
             };
-            res.render('../views/dashboard');
+            res.redirect("/dashboard")
 
           }
         }
@@ -111,6 +111,7 @@ module.exports = (db) => {
       });
 
   });
+
   router.get("/user", (req, res) => {
     res.render("user")
   });

@@ -19,10 +19,6 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
@@ -58,52 +54,54 @@
     <div class="row">
       <form style="margin: 1em" action="/api/tasks" method="POST">
         <div class="col-11">
+          <form style="margin: 1em" action="/api/tasks" method="POST" id="submit-form">
+            <div class="col-11">
 
-          <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
+              <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
+            </div>
+            <div class="col-1">
+              <button id="itemSubmit" class=" add-btn">Add</button>
+            </div>
+          </form>
         </div>
-        <div class="col-1">
-          <button id="itemSubmit" class=" add-btn">Add</button>
-        </div>
-      </form>
     </div>
-  </div>
-  <!-- main container with categories and lists -->
-  <div class="container">
-    <div class="card-deck categories">
-      <!-- to read list column -->
-      <div class="card read-list">
-        <h5 class="card-header" id="read-header"><img src="img/book.png" alt="" width="30" height="30" /> To Read</h5>
-        <div class="card-block" id="read-block">
-          <ul class="list-group list-group-flush" id="read-items">
-          </ul>
+    <!-- main container with categories and lists -->
+    <div class="container">
+      <div class="card-deck categories">
+        <!-- to read list column -->
+        <div class="card read-list">
+          <h5 class="card-header" id="read-header"><img src="img/book.png" alt="" width="30" height="30" /> To Read</h5>
+          <div class="card-block" id="read-block">
+            <ul class="list-group list-group-flush" id="read-items">
+            </ul>
+          </div>
         </div>
-      </div>
-      <!-- to watch list column -->
-      <div class="card watch-list">
+        <!-- to watch list column -->
+        <div class="card watch-list">
 
-        <h5 class="card-header" id="watch-header"><img src="img/tv.png" alt="" width="30" height="30" /> To Watch</h5>
-        <div class="card-block" id="watch-block">
-          <ul class="list-group list-group-flush" id="watch-items">
-          </ul>
+          <h5 class="card-header" id="watch-header"><img src="img/tv.png" alt="" width="30" height="30" /> To Watch</h5>
+          <div class="card-block" id="watch-block">
+            <ul class="list-group list-group-flush" id="watch-items">
+            </ul>
+          </div>
+        </div>
+        <!-- to buy list column -->
+        <div class="card buy-list">
+          <h5 class="card-header" id="buy-header"><img src="img/buy.png" alt="" width="30" height="30" /> To Buy</h5>
+          <div class="card-block" id="buy-block">
+            <ul class="list-group list-group-flush" id="buy-items">
+            </ul>
+          </div>
+        </div>
+        <!-- to eat list column -->
+        <div class="card eat-list">
+          <h5 class="card-header" id="eat-header"><img src="img/eat.png" alt="" width="30" height="30" /> To Eat</h5>
+          <div class="card-block" id="eat-block">
+            <ul class="list-group list-group-flush" id="eat-items">
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- to buy list column -->
-      <div class="card buy-list">
-        <h5 class="card-header" id="buy-header"><img src="img/buy.png" alt="" width="30" height="30" /> To Buy</h5>
-        <div class="card-block" id="buy-block">
-          <ul class="list-group list-group-flush" id="buy-items">
-          </ul>
-        </div>
-      </div>
-      <!-- to eat list column -->
-      <div class="card eat-list">
-        <h5 class="card-header" id="eat-header"><img src="img/eat.png" alt="" width="30" height="30" /> To Eat</h5>
-        <div class="card-block" id="eat-block">
-          <ul class="list-group list-group-flush" id="eat-items">
-          </ul>
-        </div>
-      </div>
-    </div>
 </body>
 
 </html>
