@@ -50,6 +50,7 @@ const categorizeByVerb = function (task) {
     order: { 2: 'restaurants' },
     buy: { 4: 'products' }
   };
+  console.log("categorizeByVerb");
   const key = task.toLowerCase().split(' ');
   if (key.length > 1 && verbs.hasOwnProperty(key[0])) {
     return Number(Object.keys(verbs[key[0]]));
@@ -98,6 +99,7 @@ const combineResults = (arr) => {
   for (let obj of arr) {
     str += str.concat(' ', obj.title.concat(' ', obj.snippet));
   }
+  console.log("combineresults")
   return str.toLowerCase();
 }
 
@@ -128,27 +130,32 @@ const getCategory = function (string) {
  * @return nothing yet..??? maybe something later
  */
 const categorizeTask =  async (obj) => {
-  const { task, user_id } = obj;
+  const { task , user_id } = obj;
+  console.log("obj", obj)
 
   // check if task already exists for that user
   const tasks = await getTaskById(user_id);
+  
   for (t of tasks) {
-    if (t.input.toLowerCase() === task.toLowerCase()) {
-      return { msg : 'Duplicate task. Please try another.'};
+    console.log("test")
+    console.log(t.input)
+    console.log(input)
+    // if (t.input.toLowerCase() === input.toLowerCase()) {
+    //   return { msg : 'Duplicate task. Please try another.'};
 
-    }
+    // }
   }
 
   const res = categorizeByVerb(task);
 
-  const input = {
-    task: task,
+  const data = {
+    input: task,
     user_id: user_id,
     category_id: res
   }
 
   if (res) {
-    const newTask = await addTask(input);
+    const newTask = await addTask(data);
     return newTask;
     //calls function that renders new task already categorized in user's main page
   } else {
@@ -162,8 +169,8 @@ const categorizeTask =  async (obj) => {
 
       })
       .then(res => {
-        input.category_id = res;
-        const newTask = addTask(input);
+        data.category_id = res;
+        const newTask = addTask(data);
         return newTask;
 
       })
