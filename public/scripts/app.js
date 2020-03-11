@@ -8,6 +8,7 @@
 //     }
 //   })  
 // })
+
 $(document).ready(function(){  
   const $submitForm = $('#submit-form');
   $submitForm.submit((event) => {
@@ -27,4 +28,5 @@ $(document).ready(function(){
       }
     })
   })
+  
 })
