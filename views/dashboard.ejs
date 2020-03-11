@@ -19,6 +19,7 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -55,12 +56,15 @@
 
   <div class="container add-item">
     <div class="row">
+        <form style="margin: 1em" action="/api/tasks" method="POST">
       <div class="col-11">
+
         <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
       </div>
       <div class="col-1">
         <button id="itemSubmit" class=" add-btn">Add</button>
       </div>
+      </form>
     </div>
   </div>
   <!-- main container with categories and lists -->
