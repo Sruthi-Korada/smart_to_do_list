@@ -139,7 +139,6 @@ const categorizeTask =  async (obj) => {
   for (t of tasks) {
     console.log("test")
     console.log(t.input)
-    console.log(input)
     // if (t.input.toLowerCase() === input.toLowerCase()) {
     //   return { msg : 'Duplicate task. Please try another.'};
 
