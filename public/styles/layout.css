@@ -45,6 +45,11 @@ body {
   margin: auto;
 }
 
+.message {
+  color: white;
+  margin-top: 10px;
+}
+
 .text {
   color: white;
   text-align: center;

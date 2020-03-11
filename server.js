@@ -61,14 +61,37 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+// VRIFY IF USER IS LOGGED OR NOT BY CHECKING THE SESSION VARIABLES
+
+const isLogged = userId => {
+  return userId !== undefined;
+}
+
+const isUserLogged = (req, res, next) => {
+  if (req.path === '/api/users/login' || req.path === '/api/users/register') {
+    next();
+  } else if (!isLogged(req.session.user_id)) {
+    res.redirect('/api/users/login');
+  } else {
+    res.redirect('/dashboard');
+  }
+}
+module.exports = {
+  isUserLogged
+};
+
 app.get("/", (req, res) => {
 
-  // VRIFY IF USER IS LOGGED OR NOT BY CHECKING THE SESSION VARIABLES
-  //IF NOT LOGGED REDIRECT TO -> /api/users/login
-  // IF LOGGED REDIRECT TO TASK  -> api//
 
-  res.redirect("/api/users/login");
 });
+
+
+//IF NOT LOGGED REDIRECT TO -> /api/users/login
+// IF LOGGED REDIRECT TO TASK  -> api//
+
+// res.redirect("/api/users/login");
+
 
 app.get("/dashboard", (req, res) => {
   res.render("dashboard");

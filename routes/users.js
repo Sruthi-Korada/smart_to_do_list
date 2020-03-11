@@ -60,7 +60,6 @@ module.exports = (db) => {
     // Add new user
     let newUser = addUser(email, bcrypt.hashSync(password, 10))
 
-    console.log(newUser);
     req.session.user_id = newUser.id;
 
     res.redirect('/api/users');

@@ -17,8 +17,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-
-
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -38,10 +36,14 @@
     <div class="navbar-nav mr-auto txt">
       <a class="navbar"> ~ ~ ~ to do list ~ ~ ~ </a>
     </div>
+    <form class="form-inline my-2 my-md-0" action="/logout" method="POST">
+      <a class="nav-link" style="padding: 20px; color:white"> You are logged in as</a>
+      <a class="nav-link" style="padding: 20px"></a>
+    </form>
     <form class="form-inline my-2 my-md-0">
       <a class="nav-link" style="padding: 20px"></a>
-      <button style="margin: 10px;" type="submit" class="btn btn-dark">Change Password</button>
-      <button action="/" method="GET" type="submit" class="btn btn-dark">Logout</button>
+      <button style="font-size: 20px" ;margin: 10px;" type="submit" class="btn btn-dark">Profile Update</button>
+      <button action="/" method="GET" style="font-size: 20px" type="submit" class="btn btn-dark">Logout</button>
     </form>
   </nav>
 </header>

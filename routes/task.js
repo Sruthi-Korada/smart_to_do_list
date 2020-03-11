@@ -34,10 +34,10 @@ module.exports = () => {
   })
 
   // get tasks from database in json format
-  router.get('/api', async (req, res) => {
-    const tasks = await getTaskById(req.session.user_id);
-    res.json(tasks);
-  })
+  // router.get('/api', async (req, res) => {
+  //   const tasks = await getTaskById(req.session.user_id);
+  //   res.json(tasks);
+  // })
 
   return router;
 }
