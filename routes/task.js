@@ -3,41 +3,50 @@ const router = express.Router();
 const {
   getTaskById,
   getUserById
-} = require('/database');
+} = require('./database');
 const {
   categorizeTask
 } = require('../routes/apiroutes');
 
-module.exports = () => {
+module.exports = (db) => {
   // load tasks page
-  router.get('/', async (req, res) => {
+  router.get("/", (req, res) => {
+    db.query(`SELECT * FROM to_do_lists;`)
+      .then(data => {
+        const tasks = data.rows;
+        res.json({
+          tasks
+        });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({
+            error: err.message
+          });
 
-    const user = await getUserById(req.session.user_id);
-    const task = await getTaskById(req.session.user_id);
-    //returns an array of objects
-    let templateVars = {
-      user: user,
-      task: task
-    }
-    res.render('../views/dashboard', templateVars);
-  })
+      });
+
+  });
 
   router.post('/', async (req, res) => {
     const input = {
-      task: req.body.task,
+      task: req.body.item,
       user_id: req.session.user_id
     }
+    console.log(input);
     // categorize new task
+    console.log(req.body);
     const newTask = await categorizeTask(input);
     res.json(newTask);
 
   })
 
   // get tasks from database in json format
-  // router.get('/api', async (req, res) => {
-  //   const tasks = await getTaskById(req.session.user_id);
-  //   res.json(tasks);
-  // })
+  router.get('/api', async (req, res) => {
+    const tasks = await getTaskById(req.session.user_id);
+    res.json(tasks);
+  })
 
   return router;
 }
