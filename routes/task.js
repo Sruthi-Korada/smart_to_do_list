@@ -11,7 +11,8 @@ const {
 module.exports = (db) => {
   // load tasks page
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM to_do_lists;`)
+
+    db.query(`SELECT * FROM to_do_lists WHERE user_id = ${req.session.user_id};`)
       .then(data => {
         const tasks = data.rows;
         res.json({

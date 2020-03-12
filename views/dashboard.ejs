@@ -3,11 +3,9 @@
 
 <head>
   <title>to do list</title>
-
   <!-- required for bootstrap responsive view -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -16,7 +14,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -25,83 +22,70 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
-
 </head>
 <header>
   <!-- Top nav bar (fixed) -->
   <nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="navbar-nav mr-auto txt">
-      <a class="navbar"> ~ ~ ~ Smart to do list ~ ~ ~ </a>
+      <a class="navbar"> ~ ~ ~ to do list ~ ~ ~ </a>
     </div>
-    <form class="form-inline my-2 my-md-0" action="/logout" method="POST">
-      <a class="nav-link" style="padding: 20px; color:white"> You are logged in as</a>
-      <a class="nav-link" style="padding: 20px"></a>
-    </form>
-    <form class="form-inline my-2 my-md-0">
-      <a class="nav-link" style="padding: 20px"></a>
-      <button style="font-size: 20px" ;margin: 10px;" type="submit" class="btn btn-dark">Profile Update</button>
-      <button action="/" method="GET" style="font-size: 20px" type="submit" class="btn btn-dark">Logout</button>
-    </form>
+    <a class="nav-link" style="padding: 20px"></a>
+    <button style="margin: 10px;" type="submit" class="btn btn-dark">Change Password</button>
+    <a href="/api/users/logout" class="btn btn-dark">Logout</a>
   </nav>
 </header>
 
 <body style="background-color: black;">
-
   <!-- if user is logged in -->
   <!-- add item input -->
-
   <div class="container add-item">
     <div class="row">
-      <form style="margin: 1em" action="/api/tasks" method="POST">
+      <form style="margin: 1em" action="/api/tasks" method="POST" id="submit-form">
         <div class="col-11">
-          <form style="margin: 1em" action="/api/tasks" method="POST" id="submit-form">
-            <div class="col-11">
-
-              <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
-            </div>
-            <div class="col-1">
-              <button id="itemSubmit" class=" add-btn">Add</button>
-            </div>
-          </form>
+          <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
         </div>
+        <div class="col-1">
+          <button id="itemSubmit" class=" add-btn">Add</button>
+        </div>
+      </form>
     </div>
-    <!-- main container with categories and lists -->
-    <div class="container">
-      <div class="card-deck categories">
-        <!-- to read list column -->
-        <div class="card read-list">
-          <h5 class="card-header" id="read-header"><img src="img/book.png" alt="" width="30" height="30" /> To Read</h5>
-          <div class="card-block" id="read-block">
-            <ul class="list-group list-group-flush" id="read-items">
-            </ul>
-          </div>
-        </div>
-        <!-- to watch list column -->
-        <div class="card watch-list">
-
-          <h5 class="card-header" id="watch-header"><img src="img/tv.png" alt="" width="30" height="30" /> To Watch</h5>
-          <div class="card-block" id="watch-block">
-            <ul class="list-group list-group-flush" id="watch-items">
-            </ul>
-          </div>
-        </div>
-        <!-- to buy list column -->
-        <div class="card buy-list">
-          <h5 class="card-header" id="buy-header"><img src="img/buy.png" alt="" width="30" height="30" /> To Buy</h5>
-          <div class="card-block" id="buy-block">
-            <ul class="list-group list-group-flush" id="buy-items">
-            </ul>
-          </div>
-        </div>
-        <!-- to eat list column -->
-        <div class="card eat-list">
-          <h5 class="card-header" id="eat-header"><img src="img/eat.png" alt="" width="30" height="30" /> To Eat</h5>
-          <div class="card-block" id="eat-block">
-            <ul class="list-group list-group-flush" id="eat-items">
-            </ul>
-          </div>
+  </div>
+  <!-- main container with categories and lists -->
+  <div class="container">
+    <div class="card-deck categories">
+      <!-- to read list column -->
+      <div class="card read-list">
+        <h5 class="card-header" id="read-header"><img src="img/book.png" alt="" width="30" height="30" /> To Read</h5>
+        <div class="card-block" id="read-block">
+          <ul class="list-group list-group-flush" id="read-items">
+          </ul>
         </div>
       </div>
+      <!-- to watch list column -->
+      <div class="card watch-list">
+        <h5 class="card-header" id="watch-header"><img src="img/tv.png" alt="" width="30" height="30" /> To Watch</h5>
+        <div class="card-block" id="watch-block">
+          <ul class="list-group list-group-flush" id="watch-items">
+          </ul>
+        </div>
+      </div>
+      <!-- to buy list column -->
+      <div class="card buy-list">
+        <h5 class="card-header" id="buy-header"><img src="img/buy.png" alt="" width="30" height="30" /> To Buy</h5>
+        <div class="card-block" id="buy-block">
+          <ul class="list-group list-group-flush" id="buy-items">
+          </ul>
+        </div>
+      </div>
+      <!-- to eat list column -->
+      <div class="card eat-list">
+        <h5 class="card-header" id="eat-header"><img src="img/eat.png" alt="" width="30" height="30" /> To Eat</h5>
+        <div class="card-block" id="eat-block">
+          <ul class="list-group list-group-flush" id="eat-items">
+          </ul>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>

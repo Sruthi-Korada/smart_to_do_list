@@ -71,7 +71,7 @@ module.exports = (db) => {
     console.log(newUser);
     req.session.user_id = newUser.id;
 
-    res.redirect('/api/users');
+    res.redirect('/dashboard');
   });
 
   router.get("/login", (req, res) => {
@@ -170,8 +170,7 @@ module.exports = (db) => {
             req.session = {
               user_id: user.id
             };
-            res.render('../views/dashboard');
-
+            res.redirect('/dashboard');
           }
         }
       })
@@ -183,11 +182,12 @@ module.exports = (db) => {
 
 
   // LOGOUT//
-  router.post('/logout', (req, res) => {
+  router.get('/logout', (req, res) => {
+    console.log("logging out");
     // clear session cookie
     req.session = null;
     // redirect to homepage/login
-    res.redirect('/index');
+    res.redirect('/');
 
   });
 

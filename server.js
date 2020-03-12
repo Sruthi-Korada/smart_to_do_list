@@ -64,22 +64,6 @@ app.use('/api/tasks', taskRoutes(db));
 
 // VRIFY IF USER IS LOGGED OR NOT BY CHECKING THE SESSION VARIABLES
 
-const isLogged = userId => {
-  return userId !== undefined;
-}
-
-const isUserLogged = (req, res, next) => {
-  if (req.path === '/api/users/login' || req.path === '/api/users/register') {
-    next();
-  } else if (!isLogged(req.session.user_id)) {
-    res.redirect('/api/users/login');
-  } else {
-    res.redirect('/dashboard');
-  }
-}
-module.exports = {
-  isUserLogged
-};
 
 app.get("/", (req, res) => {
 
@@ -103,11 +87,16 @@ app.get("/", (req, res) => {
 
 
 app.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  const isLogged = req.session.user_id !== undefined;
+  if (isLogged) {
+    res.render('dashboard');
+  } else {
+    res.redirect('/api/users/login');
+  }
 });
-app.get("/logout", (req, res) => {
-  res.render("/index");
-})
+// app.get("/logout", (req, res) => {
+//   res.render("/index");
+// });
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
