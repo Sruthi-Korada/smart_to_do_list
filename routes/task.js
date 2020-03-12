@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const {
   getTaskById,
-  getUserById
+  getUserById,
+  addTask
 } = require('./database');
-const {
-  categorizeTask
-} = require('../routes/apiroutes');
+// const {
+//   categorizeTask
+// } = require('../routes/apiroutes');
 
 module.exports = (db) => {
   // load tasks page
@@ -30,15 +31,14 @@ module.exports = (db) => {
 
   });
 
-  router.post('/', async (req, res) => {
+  router.get('/add', async (req, res) => {
     const input = {
-      task: req.body.item,
-      user_id: req.session.user_id
-    }
-    // categorize new task
-    const newTask = await categorizeTask(input);
+      input: req.query.item_input,
+      user_id: req.session.user_id,
+      category_id: req.query.category_id,
+    };
+    const newTask = await addTask(input);
     res.json(newTask);
-
   })
 
   // get tasks from database in json format

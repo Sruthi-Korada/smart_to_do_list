@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>to do list</title>
+  <title> Smart to do list</title>
   <!-- required for bootstrap responsive view -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
   <!-- Top nav bar (fixed) -->
   <nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="navbar-nav mr-auto txt">
-      <a class="navbar"> ~ ~ ~ to do list ~ ~ ~ </a>
+      <a class="navbar"> ~ ~ ~ Smart to do list ~ ~ ~ </a>
     </div>
     <a class="nav-link" style="padding: 20px"></a>
     <button style="margin: 10px;" type="submit" class="btn btn-dark">Change Password</button>
@@ -40,14 +40,13 @@
   <!-- add item input -->
   <div class="container add-item">
     <div class="row">
-      <form style="margin: 1em" action="/api/tasks" method="POST" id="submit-form">
-        <div class="col-11">
-          <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
-        </div>
-        <div class="col-1">
-          <button id="itemSubmit" class=" add-btn">Add</button>
-        </div>
-      </form>
+      <div class="col-11">
+        <input id="itemInput" class="form-control todo-item" placeholder="Add a ToDo!" name="item">
+      </div>
+      <div class="col-1">
+        <button onclick="saveTask()" id="itemSubmit" class="add-btn">Add</button>
+      </div>
+      <div class="loader"></div>
     </div>
   </div>
   <!-- main container with categories and lists -->
