@@ -12,6 +12,7 @@ body {
   z-index: 999;
   display: flex;
   align-items: center;
+  font-size: xx-large;
   font-family: 'Reenie Beanie', cursive;
   color: white;
   text-align: center;
@@ -38,7 +39,6 @@ body {
 
 .login {
   border: whitesmoke;
-  ;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
@@ -51,7 +51,7 @@ body {
 
 .message {
   color: white;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .text {
@@ -59,6 +59,7 @@ body {
   text-align: center;
   margin-top: 50px;
   font-family: 'Reenie Beanie', cursive;
+  font-size: xxx-large;
 }
 
 .mdimg {
@@ -89,6 +90,7 @@ body {
 
   color: black;
   justify-content: space-between;
+  font-size: xx-large;
 
 }
 
@@ -103,46 +105,54 @@ body {
 }
 
 .read-list {
-  margin: 100px auto;
+  margin: 50px auto;
   padding-bottom: 100px;
   border-bottom: 30px #545149 solid;
   width: 100%;
   word-break: break-word;
   text-align: center;
   font-family: fantasy;
+  box-shadow: 5px 10px 5px #888888;
+  font-size: xx-large;
 }
 
 
 .watch-list {
-  margin: 100px auto;
-  padding-bottom: 20px;
-  border-bottom: 4px #545149 solid;
-  width: 97%;
+  margin: 50px auto;
+  padding-bottom: 100px;
+  border-bottom: 30px #545149 solid;
+  width: 100%;
   word-break: break-word;
   text-align: center;
   font-family: fantasy;
+  box-shadow: 5px 10px 5px #888888;
+  font-size: xx-large;
 }
 
 
 .buy-list {
-  margin: 100px auto;
-  padding-bottom: 20px;
-  border-bottom: 4px #545149 solid;
-  width: 97%;
+  margin: 50px auto;
+  padding-bottom: 100px;
+  border-bottom: 30px #545149 solid;
+  width: 100%;
   word-break: break-word;
   text-align: center;
   font-family: fantasy;
+  box-shadow: 5px 10px 5px #888888;
+  font-size: xx-large;
 }
 
 
 .eat-list {
-  margin: 100px auto;
-  padding-bottom: 20px;
-  border-bottom: 4px #545149 solid;
-  width: 97%;
+  margin: 50px auto;
+  padding-bottom: 100px;
+  border-bottom: 30px #545149 solid;
+  width: 100%;
   word-break: break-word;
   text-align: center;
   font-family: fantasy;
+  box-shadow: 5px 10px 5px #888888;
+  font-size: xx-large;
 
 }
 
@@ -150,4 +160,10 @@ body {
   background-color: white;
   border-color: white;
   color: black;
+  font-size: x-large;
+}
+
+li {
+  padding: 5px;
+
 }
