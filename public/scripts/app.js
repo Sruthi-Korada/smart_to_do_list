@@ -18,7 +18,7 @@ function saveTask() {
   $.ajax({
     url: 'https://api.serpwow.com/live/search',
     data: {
-      api_key: "680DE5388756457FAED398B25A3A9593",
+      api_key: "89A1126FFB74445F8ECC871CFA848174",
       q: "wiki " + $("#itemInput").val()
     },
     type: 'GET',
