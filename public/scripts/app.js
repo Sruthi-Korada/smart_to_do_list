@@ -50,7 +50,7 @@ function saveTask() {
           $(".loader").hide();
           $("#itemInput").val("");
           let $task = `
-          <span > <input type="checkbox">
+          <span > <input type="checkbox"
           <li class='draggable'> ${data.input}</li>
           </span>`;
           if (data.category_id === 1) {
@@ -101,7 +101,7 @@ $(document).ready(function () {
   const callbackLoadItems = function (data) {
     data["tasks"].forEach(element => {
       let task = `
-      <span> <input type="checkbox" 
+      <span> <input type="checkbox"
       <li class='draggable'>${element["input"]}</li>
       </span>`;
       let selectedCategory = element["category_id"];
