@@ -44,6 +44,7 @@ body {
   overflow: hidden;
   transition: all 2s;
   margin: auto;
+  margin-bottom: 60px;
 }
 
 .message {
@@ -97,7 +98,7 @@ body {
 }
 
 .read-list {
-  margin: 50px auto;
+  margin: 70px auto;
   padding-bottom: 100px;
   border-bottom: 30px #545149 solid;
   width: 100%;
@@ -109,7 +110,7 @@ body {
 }
 
 .watch-list {
-  margin: 50px auto;
+  margin: 70px auto;
   padding-bottom: 100px;
   border-bottom: 30px #545149 solid;
   width: 100%;
@@ -121,7 +122,7 @@ body {
 }
 
 .buy-list {
-  margin: 50px auto;
+  margin: 70px auto;
   padding-bottom: 100px;
   border-bottom: 30px #545149 solid;
   width: 100%;
@@ -133,7 +134,7 @@ body {
 }
 
 .eat-list {
-  margin: 50px auto;
+  margin: 70px auto;
   padding-bottom: 100px;
   border-bottom: 30px #545149 solid;
   width: 100%;
@@ -153,4 +154,24 @@ body {
 
 li {
   padding: 5px;
+}
+
+.loader {
+  border: 20px solid #f3f3f3;
+  border-top: 20px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
