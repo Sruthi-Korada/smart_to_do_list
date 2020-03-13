@@ -5,10 +5,6 @@ const {
   getUserById,
   addTask
 } = require('./database');
-// const {
-//   categorizeTask
-// } = require('../routes/apiroutes');
-
 module.exports = (db) => {
   // load tasks page
   router.get("/", (req, res) => {
@@ -40,12 +36,6 @@ module.exports = (db) => {
     const newTask = await addTask(input);
     res.json(newTask);
   })
-
-  // get tasks from database in json format
-  // router.get('/api', async (req, res) => {
-  //   const tasks = await getTaskById(req.session.user_id);
-  //   res.json(tasks);
-  // })
 
   return router;
 }

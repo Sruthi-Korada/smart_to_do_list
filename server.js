@@ -53,8 +53,7 @@ console.log
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use('/api/tasks', taskRoutes(db));
-//app.use('/logout', logoutRoutes());
-//app.use('/update_profile', updateProfile(db));
+
 // Note: mount other resources here, using the same pattern above
 
 
@@ -80,12 +79,6 @@ app.get("/", (req, res) => {
 });
 
 
-//IF NOT LOGGED REDIRECT TO -> /api/users/login
-// IF LOGGED REDIRECT TO TASK  -> api//
-
-// res.redirect("/api/users/login");
-
-
 app.get("/dashboard", (req, res) => {
   const isLogged = req.session.user_id !== undefined;
   if (isLogged) {
@@ -94,9 +87,7 @@ app.get("/dashboard", (req, res) => {
     res.redirect('/api/users/login');
   }
 });
-// app.get("/logout", (req, res) => {
-//   res.render("/index");
-// });
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

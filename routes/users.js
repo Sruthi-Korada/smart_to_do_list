@@ -18,9 +18,6 @@ const router = express.Router();
 
 
 const cookieSession = require("cookie-session");
-// const bcrypt = require("bcrypt");
-
-// const chooseCategories = require("./apiroutes.js");
 
 module.exports = (db) => {
   router.get("/", (req, res) => {

@@ -49,7 +49,10 @@ function saveTask() {
         success: (data) => {
           $(".loader").hide();
           $("#itemInput").val("");
-          let $task = `<li> ${data.input}</li>`;
+          let $task = `
+          <span > <input type="checkbox">
+          <li class='draggable'> ${data.input}</li>
+          </span>`;
           if (data.category_id === 1) {
             $('#read-items').append($task)
           } else if (data.category_id === 2) {
@@ -77,7 +80,7 @@ function findInString(str, categoryVerb) {
   let words = str.match(/\b(\w+)\b/g);
   let found = false;
   words.forEach(word => {
-    for (var i = 0; i < categoryVerb.length; i++) {
+    for (let i = 0; i < categoryVerb.length; i++) {
       if (categoryVerb[i].toLowerCase() === word.toLowerCase()) {
         found = true;
       }
@@ -97,7 +100,10 @@ $(document).ready(function () {
 
   const callbackLoadItems = function (data) {
     data["tasks"].forEach(element => {
-      let task = `<li>${element["input"]}</li>`;
+      let task = `
+      <span> <input type="checkbox" 
+      <li class='draggable'>${element["input"]}</li>
+      </span>`;
       let selectedCategory = element["category_id"];
 
       if (selectedCategory === 1) {
